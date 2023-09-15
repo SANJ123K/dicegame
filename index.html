@@ -1,0 +1,58 @@
+<html>
+	<head>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div class="container">
+			<h1> Ludo</h1>
+
+			<div class="dicee">
+				<div class="dice">
+					<h2>Player 1</h2>
+					<img id="play1" src="dice1.png"  >
+				</div>
+
+				<div class="dice">
+					<h2>Player 2</h2>
+					<img src="dice2.png" id="play2">
+				</div>
+            </div>
+            <div class="button">
+            	<button onclick="ludo()"> Click Me</button>
+            </div>
+        </div>
+
+<script type="text/javascript">
+ludo= () =>
+{
+   const ran1= Math.floor(Math.random()*6) +1;
+   const photo1=`dice${ran1}.png`;
+   document.getElementById('play1').setAttribute('src',photo1);
+
+   const ran2= Math.floor((Math.random()*6) +1);
+   const photo2=`dice${ran2}.png`;
+   document.getElementById('play2').setAttribute('src',photo2);
+
+
+   if(ran1>ran2)
+   {
+   	document.querySelector("h1").innerHTML="Player 1 Won  :)";
+   }
+   else if (ran1<ran2)
+   {
+   	   	document.querySelector("h1").innerHTML="Player 2 Won  :)";
+   }
+   else
+   {
+   	   	document.querySelector('h1').innerHTML="Draw:)";
+   }
+
+}
+
+</script>
+
+	</body>
+</html>
